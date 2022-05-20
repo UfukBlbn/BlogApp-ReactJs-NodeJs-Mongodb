@@ -1,12 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import NotFoundComponent from "./NotFoundComponent";
 import articleContents from './Contents/article-contents';
 
  
 export const ArticlesComponent =({match})=>{
     const {name} = useParams();
     const article=articleContents.find(article=>article.name===name)
-    if (!article) return <h1>Could'nt find the page</h1>
+    if (!article) return <NotFoundComponent></NotFoundComponent>
     return( 
         <>
                 <> 
